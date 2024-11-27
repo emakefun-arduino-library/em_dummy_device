@@ -20,5 +20,5 @@ jobs:
       run: ./arduino-cli -v
     - name: test
       run: |
-        echo "https://$GITHUB_SERVER_URL/$GITHUB_REPOSITORY"
+        echo "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git""
 
