@@ -39,6 +39,7 @@ jobs:
         echo "--------------------compile--------------------"
         find ./arduino_ci/libraries/ -name "*.ino"
     - name: compile
+      run: |
         echo "compile ./arduino_ci/libraries/${{ARDUINO_LIB_NAME}}/examples/${{matrix.examples}}/${{matrix.examples}}.ino"
         ./arduino-cli --config-dir ./arduino_ci compile --fqbn arduino:avr:uno ./arduino_ci/libraries/${{ARDUINO_LIB_NAME}}/examples/${{matrix.examples}}/${{matrix.examples}}.ino --log --clean -v --verify
         
