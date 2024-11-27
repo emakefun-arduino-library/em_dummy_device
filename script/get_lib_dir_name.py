@@ -6,8 +6,10 @@ with open(
 
     while True:
         line = f.readline()
+
         if len(line) == 0:
             break
+
         if line.startswith("name="):
-            print(line.split("=")[1].strip())
+            print(line.split("=")[1].strip().replace(' ', '_'))
             break
