@@ -16,13 +16,16 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+      - name: setup python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.8
       - name: get lib name
         id: get_lib_name
         run: |
-          LIB_NAME=$(awk -F '=' '/name=/{print $2}' library.properties)
+          LIB_NAME=$(python script/get_lib_name.py)
           echo "LIB_NAME=${LIB_NAME}"
-          # echo "LIB_NAME=${LIB_NAME}" >> "$GITHUB_OUTPUT"
-          echo "LIB_NAME=DM11" >> "$GITHUB_OUTPUT"
+          echo "LIB_NAME=${LIB_NAME}" >> "$GITHUB_OUTPUT"
 
   build:
 
