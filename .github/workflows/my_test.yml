@@ -12,7 +12,7 @@ jobs:
 
     outputs:
       lib_name: ${{ steps.get_lib_name.outputs.lib_name }}
-
+      examples: ${{ steps.get_lib_name.outputs.examples }}
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -26,6 +26,12 @@ jobs:
           LIB_NAME=$(python script/get_lib_name.py)
           echo "lib_name=${LIB_NAME}"
           echo "lib_name=${LIB_NAME}" >> "$GITHUB_OUTPUT"
+      - name: get examples
+        id: get_examples
+        run: |
+          EXAMPLES=$(python script/get_examples.py)
+          echo "examples=${examples}"
+          echo "examples=${EXAMPLES}" >> "$GITHUB_OUTPUT"
 
   build:
 
