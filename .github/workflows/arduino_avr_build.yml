@@ -1,4 +1,4 @@
-name: Arduino CLI Build
+name: Arduino AVR Build
 
 on:
   push:
