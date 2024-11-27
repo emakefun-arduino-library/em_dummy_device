@@ -42,12 +42,7 @@ jobs:
     strategy:
       matrix:
         example: ${{ fromJSON(needs.get_lib_info.outputs.examples) }}
-        cores: ["arduino:avr", "esp32:esp32"]
-        include:
-          - core: "arduino:avr"
-            fqbn: "arduino:avr:uno"
-          - core: "esp32:esp32"
-            fqbn: "esp32:esp32:esp32"
+        fqbn: ["arduino:avr:uno", "arduino:avr:nano", "arduino:avr:mega"]
 
     steps:
     - name: download arduino cli
@@ -63,7 +58,7 @@ jobs:
         ./arduino-cli --config-dir ./arduino_ci config set library.enable_unsafe_install true
         ./arduino-cli --config-dir ./arduino_ci config set build_cache.path `pwd`/arduino_ci/build_cache
         ./arduino-cli --config-dir ./arduino_ci config dump
-        ./arduino-cli --config-dir ./arduino_ci core install ${{matrix.core}}
+        ./arduino-cli --config-dir ./arduino_ci core install arduino:avr
     - name: install lib
       run: |
         ./arduino-cli --config-dir ./arduino_ci lib install --git-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
