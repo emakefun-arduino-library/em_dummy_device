@@ -21,4 +21,12 @@ jobs:
     - name: test
       run: |
         echo "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
-
+        ./arduino-cli --config-dir ./arduino_ci config init
+        ./arduino-cli --config-dir ./arduino_ci config set directories.user `pwd`/arduino_ci
+        ./arduino-cli --config-dir ./arduino_ci config set library.enable_unsafe_install true
+        ./arduino-cli --config-dir ./arduino_ci config set build_cache.path `pwd`/arduino_ci/build_cache
+        ./arduino-cli --config-dir ./arduino_ci config dump
+        ./arduino-cli --config-dir ./arduino_ci core install arduino:avr
+        ./arduino-cli --config-dir ./arduino_ci lib install --git-url ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git
+        ./arduino-cli --config-dir ./arduino_ci compile --fqbn arduino:avr:uno ./arduino_ci/libraries/em_dm11/examples/motor_forward_backward/motor_forward_backward.ino --log --clean -v --verify
+        
