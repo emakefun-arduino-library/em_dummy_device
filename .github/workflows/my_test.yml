@@ -21,7 +21,8 @@ jobs:
         run: |
           LIB_NAME=$(awk -F '=' '/name=/{print $2}' library.properties)
           echo "LIB_NAME=${LIB_NAME}"
-          echo "LIB_NAME=${LIB_NAME}" >> "$GITHUB_OUTPUT"
+          # echo "LIB_NAME=${LIB_NAME}" >> "$GITHUB_OUTPUT"
+          echo "LIB_NAME=DM11" >> "$GITHUB_OUTPUT"
 
   build:
 
