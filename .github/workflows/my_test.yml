@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      LIB_NAME: ${{ steps.get_lib_name.outputs.LIB_NAME }}
+      lib_name: ${{ steps.get_lib_name.outputs.LIB_NAME }}
 
     steps:
       - name: checkout
@@ -25,14 +25,14 @@ jobs:
         run: |
           LIB_NAME=$(python script/get_lib_name.py)
           echo "LIB_NAME=${LIB_NAME}"
-          echo "LIB_NAME=${LIB_NAME}" >> "$GITHUB_OUTPUT"
+          echo "lib_name=${LIB_NAME}" >> "$GITHUB_OUTPUT"
 
   build:
 
     runs-on: ubuntu-latest
     needs: get-lib-info
     env:
-      ARDUINO_LIB_NAME: ${{ needs.get-lib-info.outputs.LIB_NAME }}
+      ARDUINO_LIB_NAME: ${{ needs.get-lib-info.outputs.lib_name }}
     strategy:
       matrix:
         examples: ["motor_forward_backward"]
