@@ -49,7 +49,7 @@ jobs:
         run: curl -L -o arduino-cli.tar.gz https://github.com/arduino/arduino-cli/releases/download/v1.1.1/arduino-cli_1.1.1_Linux_64bit.tar.gz
       - name: install arduino cli
         run: |
-          echo 'GITHUB_WORKSPACE:$env:GITHUB_WORKSPACE'
+          echo 'GITHUB_WORKSPACE:${GITHUB_WORKSPACE}'
           mkdir -p `pwd`/arduino_cli
           tar -zxvf arduino-cli.tar.gz -C `pwd`/arduino_cli
           export PATH=$PATH:`pwd`/arduino_cli
