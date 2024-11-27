@@ -41,7 +41,12 @@ jobs:
       ARDUINO_LIB_NAME: ${{ needs.get_lib_info.outputs.lib_name }}
     strategy:
       matrix:
-        examples: ${{ fromJSON(needs.get_lib_info.outputs.examples) }}
+        example: ${{ fromJSON(needs.get_lib_info.outputs.examples) }}
+        include:
+          - core: "arduino:avr"
+            fqbn: "arduino:avr:uno"
+          - core: "esp32:esp32"
+            fqbn: "esp32:esp32:esp32"
 
     steps:
     - name: download arduino cli
@@ -57,12 +62,12 @@ jobs:
         ./arduino-cli --config-dir ./arduino_ci config set library.enable_unsafe_install true
         ./arduino-cli --config-dir ./arduino_ci config set build_cache.path `pwd`/arduino_ci/build_cache
         ./arduino-cli --config-dir ./arduino_ci config dump
-        ./arduino-cli --config-dir ./arduino_ci core install arduino:avr
+        ./arduino-cli --config-dir ./arduino_ci core install ${{matrix.core}}
     - name: install lib
       run: |
         ./arduino-cli --config-dir ./arduino_ci lib install --git-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
     - name: compile
       run: |
-        echo "compile ./arduino_ci/libraries/${ARDUINO_LIB_NAME}/examples/${{matrix.examples}}/${{matrix.examples}}.ino"
-        ./arduino-cli --config-dir ./arduino_ci compile --fqbn arduino:avr:uno ./arduino_ci/libraries/${ARDUINO_LIB_NAME}/examples/${{matrix.examples}}/${{matrix.examples}}.ino --log --clean -v --verify
+        echo "compile ./arduino_ci/libraries/${ARDUINO_LIB_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino"
+        ./arduino-cli --config-dir ./arduino_ci compile --fqbn ${{matrix.fqbn}} ./arduino_ci/libraries/${ARDUINO_LIB_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino --log --clean -v --verify
 
