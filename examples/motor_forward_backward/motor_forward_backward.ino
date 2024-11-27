@@ -1,17 +1,17 @@
 #include "dm11.h"
 
-static Dm11 g_dm11;
+static em::Dm11 g_dm11;
 
 void setup() {
   Serial.begin(115200);
   Serial.println("setup");
-  Serial.println(String("dm11 lib version: ") + Dm11::Version());
+  Serial.println(String("dm11 lib version: ") + em::Dm11::Version());
 
   Wire.begin();
 
   const auto ret = g_dm11.Init();
 
-  if (Dm11::kOK == ret) {
+  if (em::Dm11::kOK == ret) {
     Serial.println("dm11 initialization successful");
   } else {
     Serial.print("dm11 initialization failed: ");

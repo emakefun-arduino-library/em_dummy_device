@@ -2,6 +2,7 @@
 
 #include <Arduino.h>
 
+namespace em {
 namespace {
 enum MemoryAddress : uint8_t {
   kMemAddrPwmDuty0 = 0x50,
@@ -44,4 +45,5 @@ Dm11::ErrorCode Dm11::Pwm(const uint8_t ch, uint16_t duty) {
   wire_.write(kMemAddrPwmDuty0 + (ch << 1));
   wire_.write(reinterpret_cast<const uint8_t*>(&duty), sizeof(duty));
   return static_cast<ErrorCode>(wire_.endTransmission());
+}
 }

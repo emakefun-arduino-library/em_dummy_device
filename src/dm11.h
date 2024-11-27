@@ -3,13 +3,14 @@
  */
 #pragma once
 
-#ifndef _DM11_H_
-#define _DM11_H_
+#ifndef _EM_DM11_H_
+#define _EM_DM11_H_
 
 #include <WString.h>
 #include <Wire.h>
 #include <stdint.h>
 
+namespace em {
 /**
  * @~Chinese
  * @class Dm11
@@ -275,4 +276,5 @@ class Dm11 {
   const uint8_t i2c_address_ = kDefaultI2cAddress;
   TwoWire& wire_ = Wire;
 };
+}  // namespace em
 #endif
