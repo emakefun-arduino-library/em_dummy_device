@@ -30,7 +30,7 @@ jobs:
         id: get_examples
         run: |
           EXAMPLES=$(python script/get_examples.py)
-          echo "examples=${examples}"
+          echo "examples=${EXAMPLES}"
           echo "examples=${EXAMPLES}" >> "$GITHUB_OUTPUT"
 
   build:
@@ -41,7 +41,8 @@ jobs:
       ARDUINO_LIB_NAME: ${{ needs.get-lib-info.outputs.lib_name }}
     strategy:
       matrix:
-        examples: ["motor_forward_backward"]
+        # examples: ["motor_forward_backward"]
+        examples: ${{ fromJSON(needs.get-lib-info.outputs.examples) }}
 
     steps:
     - name: download arduino cli
