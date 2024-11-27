@@ -6,8 +6,8 @@ DM11 is a module that uses the I2C protocol to drive four PWM channels, which in
 
 ## API Function
 
-<https://emakefun-arduino-library.github.io/dm11/class_dm11.html>
+- [Class Dm11](https://emakefun-arduino-library.github.io/em_dm11/docs_en/classem_1_1_dm11.html)
 
 ## Example
 
-<https://emakefun-arduino-library.github.io/dm11/motor_forward_backward_8ino-example.html>
+- [Motor forward and backward](https://emakefun-arduino-library.github.io/em_dm11/docs_en/motor_forward_backward_8ino-example.html)
