@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      lib_name: ${{ steps.get_lib_name.outputs.LIB_NAME }}
+      lib_name: ${{ steps.get_lib_name.outputs.lib_name }}
 
     steps:
       - name: checkout
@@ -24,7 +24,7 @@ jobs:
         id: get_lib_name
         run: |
           LIB_NAME=$(python script/get_lib_name.py)
-          echo "LIB_NAME=${LIB_NAME}"
+          echo "lib_name=${LIB_NAME}"
           echo "lib_name=${LIB_NAME}" >> "$GITHUB_OUTPUT"
 
   build:
