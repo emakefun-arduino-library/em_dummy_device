@@ -54,20 +54,19 @@ jobs:
         run: |
           mkdir -p ${ARDUINO_CLI_DIR}
           tar -zxvf arduino-cli.tar.gz -C ${ARDUINO_CLI_DIR}
-          alias acli='${ARDUINO_CLI_DIR}/arduino-cli --config-dir ${ARDUINO_CLI_CONFIG_DIR}'
       - name: test arduino cli
-        run: acli -v
+        run: ${ARDUINO_CLI_DIR}/arduino-cli -v
       - name: setup arduino-cli
         run: |
-          acli config init
-          acli config set directories.user ${ARDUINO_USER_DIR}
-          acli config set library.enable_unsafe_install true
-          acli config dump
-          acli core install arduino:avr
+          ${ARDUINO_CLI_DIR}/arduino-cli --config-dir ${ARDUINO_CLI_CONFIG_DIR} config init
+          ${ARDUINO_CLI_DIR}/arduino-cli --config-dir ${ARDUINO_CLI_CONFIG_DIR} config set directories.user ${ARDUINO_USER_DIR}
+          ${ARDUINO_CLI_DIR}/arduino-cli --config-dir ${ARDUINO_CLI_CONFIG_DIR} config set library.enable_unsafe_install true
+          ${ARDUINO_CLI_DIR}/arduino-cli --config-dir ${ARDUINO_CLI_CONFIG_DIR} config dump
+          ${ARDUINO_CLI_DIR}/arduino-cli --config-dir ${ARDUINO_CLI_CONFIG_DIR} core install arduino:avr
       - name: install lib
         run: |
-          acli lib install --git-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+          ${ARDUINO_CLI_DIR}/arduino-cli --config-dir ${ARDUINO_CLI_CONFIG_DIR} lib install --git-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
       - name: compile
         run: |
           echo "compile ${ARDUINO_USER_DIR}/libraries/${LIB_DIR_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino"
-          acli compile --fqbn ${{matrix.fqbn}} "${ARDUINO_USER_DIR}/libraries/${LIB_DIR_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino" --log --clean -v --verify
+          ${ARDUINO_CLI_DIR}/arduino-cli --config-dir ${ARDUINO_CLI_CONFIG_DIR} compile --fqbn ${{matrix.fqbn}} "${ARDUINO_USER_DIR}/libraries/${LIB_DIR_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino" --log --clean -v --verify
