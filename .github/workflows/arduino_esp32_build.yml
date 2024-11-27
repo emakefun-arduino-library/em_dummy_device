@@ -65,4 +65,4 @@ jobs:
     - name: compile
       run: |
         echo "compile ./arduino_ci/libraries/${ARDUINO_LIB_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino"
-        ./arduino-cli --config-dir ./arduino_ci compile --fqbn ${{matrix.fqbn}} ./arduino_ci/libraries/${ARDUINO_LIB_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino --log --clean -v --verify
+        ./arduino-cli --config-dir ./arduino_ci compile --fqbn ${{matrix.fqbn}} "./arduino_ci/libraries/${ARDUINO_LIB_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino" --log --clean -v --verify
