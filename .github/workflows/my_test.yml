@@ -7,11 +7,28 @@ on:
     branches: [ "main" ]
 
 jobs:
+  get-lib-info:
+    runs-on: ubuntu-latest
+
+    outputs:
+      LIB_NAME: ${{ steps.get_lib_name.outputs.LIB_NAME }}
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v4
+      - name: get lib name
+        id: get_lib_name
+        run: |
+          LIB_NAME=$(awk -F '=' '/name=/{print $2}' library.properties)
+          echo "LIB_NAME=${LIB_NAME}" >> $GITHUB_OUTPUT
+          echo "LIB_NAME=${LIB_NAME}"
+
   build:
 
     runs-on: ubuntu-latest
+    needs: get-lib-info
     env:
-      ARDUINO_LIB_NAME: "DM11"
+      ARDUINO_LIB_NAME: ${{ steps.get_lib_name.outputs.LIB_NAME }}
     strategy:
       matrix:
         examples: ["motor_forward_backward"]
