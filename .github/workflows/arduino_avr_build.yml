@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     outputs:
-      lib_dir_name: ${{ steps.get_lib_dir_name.outputs.lib_dir_name }}
-      examples: ${{ steps.get_examples.outputs.examples }}
+      lib_dir_name: ${{ steps.get_lib_dir_name.outputs.lib_dir_name}}
+      examples: ${{ steps.get_examples.outputs.examples}}
 
     steps:
       - name: checkout
@@ -38,15 +38,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: get_lib_info
     env:
-      LIB_DIR_NAME: ${{ needs.get_lib_info.outputs.lib_dir_name }}
-      ARDUINO_CLI_DIR: ${{ github.workspace }}/arduino_cli
-      ARDUINO_CLI_CONFIG_DIR: ${{ github.workspace }}/arduino_cli_config_dir
-      ARDUINO_USER_DIR: ${{ github.workspace }}/arduino_user_dir
+      LIB_DIR_NAME: ${{needs.get_lib_info.outputs.lib_dir_name}}
+      ARDUINO_CLI_DIR: ${{github.workspace}}/arduino_cli
+      ARDUINO_CLI_CONFIG_DIR: ${{github.workspace}}/arduino_cli_config
+      ARDUINO_USER_DIR: ${{github.workspace}}/arduino_user
     strategy:
       matrix:
-        example: ${{ fromJSON(needs.get_lib_info.outputs.examples) }}
+        example: ${{fromJSON(needs.get_lib_info.outputs.examples)}}
         fqbn: ["arduino:avr:uno", "arduino:avr:nano", "arduino:avr:mega"]
-
     steps:
       - name: download arduino cli
         run: curl -L -o arduino-cli.tar.gz https://github.com/arduino/arduino-cli/releases/download/v1.1.1/arduino-cli_1.1.1_Linux_64bit.tar.gz
