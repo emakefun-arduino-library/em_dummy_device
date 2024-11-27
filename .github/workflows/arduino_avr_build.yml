@@ -2,9 +2,9 @@ name: Arduino AVR Build
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   get_lib_info:
@@ -45,24 +45,27 @@ jobs:
         fqbn: ["arduino:avr:uno", "arduino:avr:nano", "arduino:avr:mega"]
 
     steps:
-    - name: download arduino cli
-      run: curl -L -o arduino-cli.tar.gz https://github.com/arduino/arduino-cli/releases/download/v1.1.1/arduino-cli_1.1.1_Linux_64bit.tar.gz
-    - name: install arduino cli
-      run: tar -zxvf arduino-cli.tar.gz
-    - name: test arduino cli
-      run: ./arduino-cli -v
-    - name: setup arduino-cli
-      run: |
-        ./arduino-cli --config-dir ./arduino_ci config init
-        ./arduino-cli --config-dir ./arduino_ci config set directories.user `pwd`/arduino_ci
-        ./arduino-cli --config-dir ./arduino_ci config set library.enable_unsafe_install true
-        ./arduino-cli --config-dir ./arduino_ci config set build_cache.path `pwd`/arduino_ci/build_cache
-        ./arduino-cli --config-dir ./arduino_ci config dump
-        ./arduino-cli --config-dir ./arduino_ci core install arduino:avr
-    - name: install lib
-      run: |
-        ./arduino-cli --config-dir ./arduino_ci lib install --git-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
-    - name: compile
-      run: |
-        echo "compile `pwd`/arduino_ci/libraries/${ARDUINO_LIB_DIR_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino"
-        ./arduino-cli --config-dir ./arduino_ci compile --fqbn ${{matrix.fqbn}} "./arduino_ci/libraries/${ARDUINO_LIB_DIR_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino" --log --clean -v --verify
+      - name: download arduino cli
+        run: curl -L -o arduino-cli.tar.gz https://github.com/arduino/arduino-cli/releases/download/v1.1.1/arduino-cli_1.1.1_Linux_64bit.tar.gz
+      - name: install arduino cli
+        run: |
+          tar -zxvf arduino-cli.tar.gz -C `pwd`/arduino_cli
+          export PATH=$PATH:`pwd`/arduino_cli
+          alias acli='arduino-cli --config-dir ~/arduino'
+      - name: test arduino cli
+        run: arduino-cli -v
+      - name: setup arduino-cli
+        run: |
+          acli config init
+          acli config set directories.user ~/arduino
+          acli config set library.enable_unsafe_install true
+          acli config set build_cache.path ~/arduino/build_cache
+          acli config dump
+          acli core install arduino:avr
+      - name: install lib
+        run: |
+          acli lib install --git-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+      - name: compile
+        run: |
+          echo "compile ~/arduino/libraries/${ARDUINO_LIB_DIR_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino"
+          acli compile --fqbn ${{matrix.fqbn}} "~/arduino/libraries/${ARDUINO_LIB_DIR_NAME}/examples/${{matrix.example}}/${{matrix.example}}.ino" --log --clean -v --verify
