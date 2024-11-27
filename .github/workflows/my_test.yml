@@ -20,7 +20,7 @@ jobs:
         id: get_lib_name
         run: |
           LIB_NAME=$(awk -F '=' '/name=/{print $2}' library.properties)
-          echo "LIB_NAME=${LIB_NAME}" >> $GITHUB_OUTPUT
+          echo "LIB_NAME=${LIB_NAME}" >> "$GITHUB_OUTPUT"
           echo "LIB_NAME=${LIB_NAME}"
 
   build:
