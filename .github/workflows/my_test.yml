@@ -42,6 +42,7 @@ jobs:
     strategy:
       matrix:
         example: ${{ fromJSON(needs.get_lib_info.outputs.examples) }}
+        cores: ["arduino:avr", "esp32:esp32"]
         include:
           - core: "arduino:avr"
             fqbn: "arduino:avr:uno"
