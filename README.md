@@ -4,7 +4,7 @@
 
 DM11 is a module that uses the I2C protocol to drive four PWM channels, which in turn drive two motors. The default I2C address is 0x15.
 
-## API Function
+## Class Reference
 
 - [Class Dm11](https://emakefun-arduino-library.github.io/em_dm11/docs_en/classem_1_1_dm11.html)
 
