@@ -32,5 +32,6 @@ jobs:
         echo "--------------------lib install--------------------"
         ./arduino-cli --config-dir ./arduino_ci lib install --git-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git" -v
         echo "--------------------compile--------------------"
-        ./arduino-cli --config-dir ./arduino_ci compile --fqbn arduino:avr:uno ./arduino_ci/libraries/em_dm11/examples/motor_forward_backward/motor_forward_backward.ino --log --clean -v --verify
+        find ./arduino_ci/libraries/ -name "*.ino"
+        # ./arduino-cli --config-dir ./arduino_ci compile --fqbn arduino:avr:uno ./arduino_ci/libraries/em_dm11/examples/motor_forward_backward/motor_forward_backward.ino --log --clean -v --verify
         
