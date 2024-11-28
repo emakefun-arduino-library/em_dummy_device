@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['kdefaulti2caddress_0',['kDefaultI2cAddress',['../classem_1_1_dm11.html#ac7b0a62c3e91fbca1007a4d61d67c60a',1,'em::Dm11']]],
-  ['kmaxfrequencyhz_1',['kMaxFrequencyHz',['../classem_1_1_dm11.html#a2424ea3d08d46af41bebea4de862e1ea',1,'em::Dm11']]],
-  ['kmaxpwmduty_2',['kMaxPwmDuty',['../classem_1_1_dm11.html#a5b5c5266a3ec66cc739c1716a6810567',1,'em::Dm11']]],
-  ['kminfrequencyhz_3',['kMinFrequencyHz',['../classem_1_1_dm11.html#a63aaea1d79f4675501bef6cda73bfc0e',1,'em::Dm11']]],
-  ['kpwmchannelnum_4',['kPwmChannelNum',['../classem_1_1_dm11.html#a9f30d7929c22b31917f178503de5569a',1,'em::Dm11']]],
-  ['kversionmajor_5',['kVersionMajor',['../classem_1_1_dm11.html#a2d5f8afb878b346e8cecad4b7d8141fd',1,'em::Dm11']]],
-  ['kversionminor_6',['kVersionMinor',['../classem_1_1_dm11.html#aca8dbc0a2826284d19c4a53443509b4e',1,'em::Dm11']]],
-  ['kversionpatch_7',['kVersionPatch',['../classem_1_1_dm11.html#aad2fb23962ff71350a6519c3e85b0b08',1,'em::Dm11']]]
+  ['kdefaulti2caddress_0',['kDefaultI2cAddress',['../classem_1_1_dummy_device.html#af5901ef9ac78b533afd4af31b48f7dd4',1,'em::DummyDevice']]],
+  ['kversionmajor_1',['kVersionMajor',['../classem_1_1_dummy_device.html#a0b7c82518452f135e635ad5be348510e',1,'em::DummyDevice']]],
+  ['kversionminor_2',['kVersionMinor',['../classem_1_1_dummy_device.html#aa3b608f93b06d3126a8ace25c71471a7',1,'em::DummyDevice']]],
+  ['kversionpatch_3',['kVersionPatch',['../classem_1_1_dummy_device.html#aaa8cc1f4958f043dd826e076d1a63a03',1,'em::DummyDevice']]]
 ];

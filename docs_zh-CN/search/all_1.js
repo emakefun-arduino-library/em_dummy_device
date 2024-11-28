@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['errorcode_0',['ErrorCode',['../classem_1_1_dm11.html#a6c38fbc3f05f23324280adb9c03b758b',1,'em::Dm11']]]
+  ['errorcode_0',['ErrorCode',['../classem_1_1_dummy_device.html#a8d63fb3cbaddb79589c3bd6c134c7809',1,'em::DummyDevice']]]
 ];

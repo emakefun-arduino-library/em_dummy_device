@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['dm11_0',['Dm11',['../classem_1_1_dm11.html',1,'em::Dm11'],['../classem_1_1_dm11.html#a612627d1e1525ebbf46ec575aab220c4',1,'em::Dm11::Dm11(const uint8_t i2c_address=kDefaultI2cAddress, TwoWire &amp;wire=Wire)'],['../classem_1_1_dm11.html#ab297490158beeee0f3873c730ef0d062',1,'em::Dm11::Dm11(TwoWire &amp;wire)']]],
-  ['dm11_2eh_1',['dm11.h',['../dm11_8h.html',1,'']]]
+  ['dummy_5fdevice_2eh_0',['dummy_device.h',['../dummy__device_8h.html',1,'']]],
+  ['dummydevice_1',['DummyDevice',['../classem_1_1_dummy_device.html',1,'em::DummyDevice'],['../classem_1_1_dummy_device.html#aa7deb6ce5613c9b351915143b5aa274e',1,'em::DummyDevice::DummyDevice(const uint8_t i2c_address=kDefaultI2cAddress, TwoWire &amp;wire=Wire)'],['../classem_1_1_dummy_device.html#a27d234c0443ba358762b9898d8e1e109',1,'em::DummyDevice::DummyDevice(TwoWire &amp;wire)']]]
 ];

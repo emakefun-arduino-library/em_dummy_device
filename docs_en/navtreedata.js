@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "DM11 Arduino Library", "index.html", [
+  [ "Dummy Device Arduino Library", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],

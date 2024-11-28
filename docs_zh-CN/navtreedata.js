@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "DM11 Arduino Library", "index.html", [
+  [ "Dummy Device Arduino Library", "index.html", [
     [ "类", "annotated.html", [
       [ "类列表", "annotated.html", "annotated_dup" ],
       [ "类索引", "classes.html", null ],
