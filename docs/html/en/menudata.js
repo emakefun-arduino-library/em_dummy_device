@@ -36,4 +36,4 @@ var menudata={children:[
 {text:"File List",url:"files.html"}]},
 {text:"Examples",url:"examples.html"},
 {text:"Downloads",url:"usergroup0.html",children:[
-{text:"Download Library: Dummy_Device_v1.0.2.zip",url:"../../download/Dummy_Device_v1.0.2.zip"}]}]}
+{text:"EM_Dummy_Device_v1.0.3.zip: https://github.com/emakefun-arduino-library/em_dummy_device/archive/refs/tags/v1.0.3.zip",url:"^https://github.com/emakefun-arduino-library/em_dummy_device/archive/refs/tags/v1.0.3.zip"}]}]}

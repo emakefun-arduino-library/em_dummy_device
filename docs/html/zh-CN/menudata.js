@@ -36,4 +36,4 @@ var menudata={children:[
 {text:"文件列表",url:"files.html"}]},
 {text:"示例",url:"examples.html"},
 {text:"下载",url:"usergroup0.html",children:[
-{text:"下载库: Dummy_Device_v1.0.2.zip",url:"../../download/Dummy_Device_v1.0.2.zip"}]}]}
+{text:"EM_Dummy_Device_v1.0.3.zip: https://gh-proxy.com/https://github.com/emakefun-arduino-library/em_dummy_device/archive/refs/tags/v1.0.3.zip",url:"^https://gh-proxy.com/https://github.com/emakefun-arduino-library/em_dummy_device/archive/refs/tags/v1.0.3.zip"}]}]}

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['device_20arduino_20库_0',['Dummy Device Arduino 库',['../index.html',1,'']]],
-  ['dummy_20device_20arduino_20库_1',['Dummy Device Arduino 库',['../index.html',1,'']]],
+  ['device_20arduino_20库_0',['EM Dummy Device Arduino 库',['../index.html',1,'']]],
+  ['dummy_20device_20arduino_20库_1',['EM Dummy Device Arduino 库',['../index.html',1,'']]],
   ['dummy_5fdevice_2ecpp_2',['dummy_device.cpp',['../dummy__device_8cpp.html',1,'']]],
   ['dummy_5fdevice_2eh_3',['dummy_device.h',['../dummy__device_8h.html',1,'']]],
   ['dummy_5fdevice_5flib_2eh_4',['dummy_device_lib.h',['../dummy__device__lib_8h.html',1,'']]],

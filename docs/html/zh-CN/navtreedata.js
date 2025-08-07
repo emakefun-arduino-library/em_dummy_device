@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Dummy Device Arduino 库", "index.html", [
+  [ "EM Dummy Device Arduino 库", "index.html", [
     [ "类", "annotated.html", [
       [ "类列表", "annotated.html", "annotated_dup" ],
       [ "类索引", "classes.html", null ],
@@ -40,14 +40,14 @@ var NAVTREE =
     ] ],
     [ "示例", "examples.html", "examples" ],
     [ "下载", "usergroup0.html", [
-      [ "下载库: Dummy_Device_v1.0.2.zip", "../../download/Dummy_Device_v1.0.2.zip", null ]
+      [ "EM_Dummy_Device_v1.0.3.zip: https://gh-proxy.com/https://github.com/emakefun-arduino-library/em_dummy_device/archive/refs/tags/v1.0.3.zip", "^https://gh-proxy.com/https://github.com/emakefun-arduino-library/em_dummy_device/archive/refs/tags/v1.0.3.zip", null ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"../../download/Dummy_Device_v1.0.2.zip"
+"annotated.html"
 ];
 
 var SYNCONMSG = '点击 关闭 面板同步';
