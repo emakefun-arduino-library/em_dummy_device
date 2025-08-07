@@ -1,6 +1,5 @@
 var NAVTREEINDEX0 =
 {
-"../../download/Dummy_Device_v1.0.2.zip":[3,0],
 "annotated.html":[0,0],
 "classem_1_1_dummy_device.html":[0,0,0,0],
 "classem_1_1_dummy_device.html#a1ea69f72cbd9ddbc2527a0d29a5a8b6d":[0,0,0,0,3],

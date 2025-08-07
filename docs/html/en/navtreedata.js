@@ -24,7 +24,7 @@
 */
 var NAVTREE =
 [
-  [ "Dummy Device Arduino Lib", "index.html", [
+  [ "EM Dummy Device Arduino Lib", "index.html", [
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -40,14 +40,14 @@ var NAVTREE =
     ] ],
     [ "Examples", "examples.html", "examples" ],
     [ "Downloads", "usergroup0.html", [
-      [ "Download Library: Dummy_Device_v1.0.2.zip", "../../download/Dummy_Device_v1.0.2.zip", null ]
+      [ "EM_Dummy_Device_v1.0.3.zip: https://github.com/emakefun-arduino-library/em_dummy_device/archive/refs/tags/v1.0.3.zip", "^https://github.com/emakefun-arduino-library/em_dummy_device/archive/refs/tags/v1.0.3.zip", null ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"../../download/Dummy_Device_v1.0.2.zip"
+"annotated.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
